@@ -35,6 +35,13 @@ for z in range(0,2):
                     search2 = db_hubungan[i]
                 break
 
+#karena tidak semua kolom pada db hubungan kata ada isinya, lakukan penghapusan pada elemen kosong
+#remove elemen kosong
+while ("" in search1):
+    search1.remove("")
+while ("" in search2):
+    search2.remove("")
+
 #cari array hasil per kata
 temp1 = []
 temp2 = []
@@ -58,6 +65,9 @@ for i in range(0,len(temp1)):
     for j in range(0,len(temp2)):
         if temp1[i] == temp2[j]:
             result.append(temp1[i])
+
+#hilangkan duplikat yang ada pada result
+result = list(dict.fromkeys(result))
 
 #output result
 print("Artikel relevan : ")
