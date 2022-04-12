@@ -28,7 +28,7 @@ search2 = []
 for z in range(0,2):
     for i in range(0,len(db_hubungan)):
         for j in range(0,len(db_hubungan[i])):
-            if fuzz.partial_ratio(db_hubungan[i][j],split_input[z])>70: #klo kecocokan >70 maka masuk
+            if fuzz.partial_ratio(db_hubungan[i][j].lower(),split_input[z].lower())>70: #klo kecocokan >70 maka masuk
                 if z == 0:
                     search1 = db_hubungan[i]
                 elif z == 1:
@@ -48,14 +48,14 @@ temp2 = []
 for z in range(0,len(search1)):
     for i in range(1,len(db_judul)):
         for j in range(1,len(db_judul[i])):
-            if fuzz.partial_ratio(db_judul[i][j],search1[z])>70: #klo kecocokan >70 maka masuk
+            if fuzz.partial_ratio(db_judul[i][j].lower(),search1[z].lower())>70: #klo kecocokan >70 maka masuk
                 temp1.append(db_judul[i][0])
                 break
 
 for z in range(0,len(search2)):
     for i in range(1,len(db_judul)):
         for j in range(1,len(db_judul[i])):
-            if fuzz.partial_ratio(db_judul[i][j],search2[z])>70: #klo kecocokan >70 maka masuk
+            if fuzz.partial_ratio(db_judul[i][j].lower(),search2[z].lower())>70: #klo kecocokan >70 maka masuk
                 temp2.append(db_judul[i][0])
                 break
 
