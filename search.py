@@ -44,9 +44,6 @@ for z in range(0,2):
                 if z == 1:
                     search2.extend(db_hubungan[i])
 
-print(search1)
-print(search2)
-
 #karena tidak semua kolom pada db hubungan kata ada isinya, lakukan penghapusan pada elemen kosong
 #remove elemen kosong
 while ("" in search1):
