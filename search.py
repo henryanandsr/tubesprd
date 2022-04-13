@@ -25,15 +25,27 @@ split_input = search.split(' ')
 #skema cari hubungan kata
 search1 = []
 search2 = []
+max_search = [0,0]
 for z in range(0,2):
     for i in range(0,len(db_hubungan)):
         for j in range(0,len(db_hubungan[i])):
-            if fuzz.partial_ratio(db_hubungan[i][j].lower(),split_input[z].lower())>70: #klo kecocokan >70 maka masuk
+            if fuzz.partial_ratio(db_hubungan[i][j].lower(),split_input[z].lower())>max_search[z]:
                 if z == 0:
-                    search1 = db_hubungan[i]
+                    max_search[z] = fuzz.partial_ratio(db_hubungan[i][j].lower(),split_input[z].lower())
                 elif z == 1:
-                    search2 = db_hubungan[i]
-                break
+                    max_search[z] = fuzz.partial_ratio(db_hubungan[i][j].lower(),split_input[z].lower())
+
+for z in range(0,2):
+    for i in range(0,len(db_hubungan)):
+        for j in range(0,len(db_hubungan[i])):
+            if fuzz.partial_ratio(db_hubungan[i][j].lower(),split_input[z].lower())==max_search[z]:
+                if z == 0:
+                    search1.extend(db_hubungan[i])
+                if z == 1:
+                    search2.extend(db_hubungan[i])
+
+print(search1)
+print(search2)
 
 #karena tidak semua kolom pada db hubungan kata ada isinya, lakukan penghapusan pada elemen kosong
 #remove elemen kosong
