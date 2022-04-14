@@ -1,8 +1,12 @@
-word;hubungan1;hubungan2;hubungan3;hubungan4
-buah;pisang;apel;jeruk;apple
-perusahaan;Apple;Facebook;Twitter;Nvidia
-jabatan;Presiden;CEO;Ketua;Gubernur
-pertemuan;upacara;apel;rapat;
-makanan;pai;buah;soto;pie
-sekolah;SMA;SMAN;STEI;SMP
-aksesoris;jam tangan;jam;watch;ring
+word;synonym1;synonym2
+apel;apple;
+makan;makanan;
+pisang;banana;
+buah;fruit;
+upacara;apel;
+SMA;SMAN;
+watch;jam;jam tangan
+CEO;direktur;coo
+pie;pai;
+Presiden;President;
+eat;eating;makan

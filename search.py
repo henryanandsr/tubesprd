@@ -51,6 +51,10 @@ while ("" in search1):
 while ("" in search2):
     search2.remove("")
 
+#remove duplicates in searchs
+search1 = list(dict.fromkeys(search1))
+search2 = list(dict.fromkeys(search2))
+
 #cari array hasil per kata
 temp1 = []
 temp2 = []
